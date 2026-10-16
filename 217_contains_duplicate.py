@@ -17,6 +17,19 @@ class Solution(object):
             # if not seen it, it add it in our variable
             seen[i]
         # retrun do go to other index
+        return False
+        
+        seen2 = set()
+          # do a loop in my listt
+        for i in numss:
+            # check if the varaible is in seen
+            if i in seen2:
+                return True
+            # if not seen it, it add it in our variable
+            seen.add(i)
+        # retrun do go to other index
+        return False
+
                 
 
             
