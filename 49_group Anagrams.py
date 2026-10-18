@@ -3,11 +3,19 @@ class Solution(object):
         """
         :type strs: List[str]
         :rtype: List[List[str]]
-        """
+        """ 
+        # CREATE empty dictionary called groups
+        groups = {}
         
+        for word in strs:
+            #key = sort the letters of word into a string
+            key = "".join(sorted(word))
+            # IF key is NOT already in groups:
+            if key not in groups:
+                # create new empty list at groups[key]
+                groups[key] = []
+            # ADD word to the list at groups[key]
+            groups[key].append(word)
+        return list(groups.values())
+
         
-        for i in range(len(strs)):
-            for j in range(i +1, len(strs)):
-               if (sorted(strs[i]) == sorted(strs[j])):
-                    strs.extend([i, j])
-        print(strs)
