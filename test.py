@@ -11,11 +11,12 @@ class Solution(object):
         for number in nums:
             key = number 
             if number not in group:
-                group[key] = []
-                group[key] += 1
-            else: group[key] += 1
-            print("value")       
-        return max(group, key=group.get)
+                group[key] = 0    
+            group[key] += 1       
+        top = sorted(group.items(), key=lambda x: x[1], reverse=True)[:k]
+        return [item[0] for item in top]
+    
+    ## reutnr 
  
             
         
